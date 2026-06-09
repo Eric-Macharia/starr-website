@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARR AUTO Enterprise Ltd — Your Trusted Partner for Automotive Solutions in Nyeri</title>
+    <meta name="description"
+        content="STARR AUTO Enterprise in Skuta Nyeri offers carwash services, NTSA services, speed governors, dashcam solutions, fuel monitoring and car trackers. Located next to Modern Furniture, opposite Rubis Petrol Station.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-display {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.85)), url('https://i.imgur.com/xR18kTq.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #fbbf24, #f87171, #60a5fa);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .glow {
+            text-shadow: 0 0 20px rgba(96, 165, 250, 0.5), 0 0 40px rgba(96, 165, 250, 0.3);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-anim {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .slide-in-delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .slide-in-delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .slide-in-delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+            transform: rotate(30deg) translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn-shine:hover::after {
+            transform: rotate(30deg) translateX(100%);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .float-call {
+            animation: float 2s ease-in-out infinite, pulseGlow 2s ease-in-out infinite;
+        }
+
+        .img-zoom {
+            overflow: hidden;
+        }
+
+        .img-zoom img {
+            transition: transform 0.5s ease;
+        }
+
+        .img-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+    </style>
+    <base target="_blank">
+</head>
+
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/95 backdrop-blur-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/30 transition-shadow duration-300">
+                        <i data-lucide="car" class="h-7 w-7 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black text-gray-900 tracking-tight font-display leading-none">STARR
+                            AUTO </h1>
+                        <p class="text-xs text-blue-600 font-bold uppercase tracking-[0.2em]">Enterprise LTD</p>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="#home"
+                        class="nav-link px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition text-sm uppercase tracking-wide">Home</a>
+                    <a href="#services"
+                        class="nav-link px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition text-sm uppercase tracking-wide">Services</a>
+                    <a href="#about"
+                        class="nav-link px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition text-sm uppercase tracking-wide">About</a>
+                    <a href="#location"
+                        class="nav-link px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition text-sm uppercase tracking-wide">Location</a>
+                    <a href="#contact"
+                        class="ml-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-7 py-3 rounded-full font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 btn-shine text-sm uppercase tracking-wide">Contact
+                        Us</a>
+                </div>
+                <button onclick="toggleMenu()" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition">
+                    <i data-lucide="menu" class="h-6 w-6 text-gray-700" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden" onclick="toggleMenu()"></div>
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 bg-white z-50 shadow-2xl lg:hidden">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-10">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="car" class="h-5 w-5 text-white"></i></div>
+                        <span class="font-bold text-lg text-gray-900 font-display">STARR AUTO</span>
+                    </div>
+                    <button onclick="toggleMenu()" class="p-2 rounded-lg hover:bg-gray-100 transition"><i data-lucide="x" class="h-6 w-6 text-gray-700"></i></button>
+                </div>
+                <div class="space-y-2">
+                    <a href="#home" onclick="toggleMenu()"
+                        class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl font-medium transition text-lg">Home</a>
+                    <a href="#services" onclick="toggleMenu()"
+                        class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl font-medium transition text-lg">Services</a>
+                    <a href="#about" onclick="toggleMenu()"
+                        class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl font-medium transition text-lg">About
+                        Us</a>
+                    <a href="#location" onclick="toggleMenu()"
+                        class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl font-medium transition text-lg">Location</a>
+                    <a href="#contact" onclick="toggleMenu()"
+                        class="block px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-bold text-center mt-4 shadow-lg">Contact
+                        Us</a>
+                </div>
+                <div class="mt-10 pt-6 border-t border-gray-100">
+                    <p class="text-sm text-gray-500 mb-2">Call us directly</p>
+                    <a href="tel:0727006325" class="text-xl font-bold text-blue-600">0727 006 325</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="blob w-96 h-96 bg-blue-500 -top-48 -left-48"></div>
+        <div class="blob w-80 h-80 bg-yellow-400 bottom-0 right-0"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 pt-20">
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="slide-in inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-8">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span class="text-blue-200 text-sm font-semibold tracking-wide uppercase">Professional Auto Services in Nyeri</span>
+                </div>
+                <h1
+                    class="slide-in slide-in-delay-1 text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.1] font-display">
+                    Your Trusted Partner for <br/>
+                    <span class="gradient-text glow">Automotive Solutions</span>
+                </h1>
+                <p
+                    class="slide-in slide-in-delay-2 text-xl md:text-2xl text-blue-100/90 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+                    Located in Skuta Nyeri, we provide premium carwash services, NTSA compliance, speed governors,
+                    dashcam solutions, fuel monitoring & vehicle tracking systems.
+                </p>
+                <div class="slide-in slide-in-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="tel:0727006325"
+                        class="group bg-white text-blue-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-2xl hover:shadow-white/20 flex items-center gap-3 btn-shine">
+                        <div
+                            class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition">
+                            <i data-lucide="phone" class="h-5 w-5 text-blue-700"></i></div>
+                        <span>Call: 0727 006 325</span>
+                    </a>
+                    <a href="#services"
+                        class="group border-2 border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300 flex items-center gap-3 backdrop-blur-sm">
+                        <i data-lucide="list" class="h-5 w-5"></i><span>Our Services</span><i data-lucide="arrow-down" class="h-4 w-4 group-hover:translate-y-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10 float-anim"
+                        style="animation-delay:0s;">
+                        <div class="text-3xl font-black text-white font-display">5+</div>
+                        <div class="text-blue-200 text-sm">Years Experience</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10 float-anim"
+                        style="animation-delay:0.5s;">
+                        <div class="text-3xl font-black text-white font-display">1000+</div>
+                        <div class="text-blue-200 text-sm">Happy Clients</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10 float-anim"
+                        style="animation-delay:1s;">
+                        <div class="text-3xl font-black text-white font-display">6</div>
+                        <div class="text-blue-200 text-sm">Expert Services</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10 float-anim"
+                        style="animation-delay:1.5s;">
+                        <div class="text-3xl font-black text-white font-display">24/7</div>
+                        <div class="text-blue-200 text-sm">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="h-8 w-8 text-white/50"></i></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50/50 to-transparent pointer-events-none">
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div
+                    class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 rounded-full px-4 py-1.5 mb-4 text-sm font-semibold uppercase tracking-wide">
+                    <i data-lucide="sparkles" class="h-4 w-4"></i>What We Offer</div>
+                <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 font-display">Comprehensive Auto Services
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">We provide a wide range of
+                    professional automotive services to keep your vehicle in top condition and compliant with
+                    regulations.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="service-card reveal bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="droplets" class="h-8 w-8 text-white"></i></div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Carwash Services</h4>
+                    <p class="text-gray-500 mb-5 leading-relaxed">Premium interior and exterior cleaning with modern
+                        equipment and eco-friendly products.</p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Exterior Wash
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Interior Detailing
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Engine Cleaning
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Car Buffing
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="service-card reveal bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/20 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="file-check" class="h-8 w-8 text-white"></i></div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">NTSA Services</h4>
+                    <p class="text-gray-500 mb-5 leading-relaxed">Complete NTSA compliance services including vehicle
+                        inspection booking and documentation assistance.</p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Vehicle Inspection
+                            Booking
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Logbook Transfer
+                            Services
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Driving License
+                            Services
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> All NTSA Ecitizen
+                            Services
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="service-card reveal bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="gauge" class="h-8 w-8 text-white"></i></div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Speed Governors</h4>
+                    <p class="text-gray-500 mb-5 leading-relaxed">Professional installation and calibration of
+                        NTSA-approved speed limiting devices.</p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Installation
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Calibration
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Maintenance
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="service-card reveal bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="map-pin" class="h-8 w-8 text-white"></i></div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Car Trackers</h4>
+                    <p class="text-gray-500 mb-5 leading-relaxed">Advanced GPS tracking systems to monitor and secure
+                        your vehicle 24/7.</p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> GPS Installation
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Real-time Tracking
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Mobile App Access
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="service-card reveal bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-red-500/20 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="video" class="h-8 w-8 text-white"></i></div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Dashcam Solutions</h4>
+                    <p class="text-gray-500 mb-5 leading-relaxed">Dashcams that record, analyse, and protect — so
+                        nothing on the road catches you off guard.</p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> HD Live & Recorded
+                            Footage
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Driver Behaviour
+                            Analysis
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Incident & Accident
+                            Evidence
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="service-card reveal bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="fuel" class="h-8 w-8 text-white"></i></div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Fuel Monitoring</h4>
+                    <p class="text-gray-500 mb-5 leading-relaxed">Real-time fuel tracking and analytics to eliminate
+                        theft, reduce wastage, and optimise fleet fuel costs.</p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Real-Time Fuel Level
+                            Alerts
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Theft & Siphoning
+                            Detection
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div
+                                class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="h-3 w-3 text-green-600"></i></div> Consumption Reports
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="blob w-96 h-96 bg-blue-400 top-1/2 -left-48"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 rounded-full px-4 py-1.5 mb-4 text-sm font-semibold uppercase tracking-wide">
+                        <i data-lucide="info" class="h-4 w-4"></i>About Us</div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 font-display leading-tight">Nyeri's
+                        Premier <br/>Auto Service Center</h2>
+                    <p class="text-gray-500 text-lg mb-6 leading-relaxed">Starr Auto Enterprise Ltd has been serving the
+                        Nyeri community with dedication and professionalism. We pride ourselves on delivering
+                        high-quality automotive services that meet NTSA standards and exceed customer expectations.</p>
+                    <p class="text-gray-500 text-lg mb-10 leading-relaxed">Our team of certified technicians uses the
+                        latest technology and equipment to ensure your vehicle receives the best care possible. Whether
+                        you need a quick wash or complex regulatory compliance services, we have got you covered.</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/20">
+                                <i data-lucide="shield-check" class="h-6 w-6 text-white"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 font-display">Certified</h4>
+                                <p class="text-sm text-gray-500">NTSA Approved</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-500/20">
+                                <i data-lucide="clock" class="h-6 w-6 text-white"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 font-display">Quick Service</h4>
+                                <p class="text-sm text-gray-500">Minimal Wait Time</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/20">
+                                <i data-lucide="users" class="h-6 w-6 text-white"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 font-display">Expert Team</h4>
+                                <p class="text-sm text-gray-500">Trained Technicians</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-500/20">
+                                <i data-lucide="badge-check" class="h-6 w-6 text-white"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 font-display">Quality</h4>
+                                <p class="text-sm text-gray-500">Guaranteed Work</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 reveal">
+                    <div class="relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-3xl transform rotate-2">
+                        </div>
+                        <div class="img-zoom relative rounded-3xl shadow-2xl overflow-hidden">
+                            <img src="https://i.imgur.com/GbNYtSh.jpeg" alt="Auto Shop" class="w-full object-cover h-[450px]">
+                        </div>
+                        <div
+                            class="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white font-black text-2xl font-display shadow-lg shadow-blue-500/30">
+                                    5+</div>
+                                <div>
+                                    <p class="font-bold text-gray-900 text-lg font-display">Years of</p>
+                                    <p class="text-blue-600 font-bold text-lg">Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div
+                    class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 rounded-full px-4 py-1.5 mb-4 text-sm font-semibold uppercase tracking-wide">
+                    <i data-lucide="map-pin" class="h-4 w-4"></i>Find Us</div>
+                <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 font-display">Visit Our Workshop</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">Conveniently located in Skuta Nyeri
+                    with easy access and visible landmarks.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 reveal">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-[450px] relative">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7041294102364!2d36.965434775315245!3d-0.43348883528935594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182861b062848eff%3A0x9226cbc5d4d9157f!2sSTARR%20AUTO%20ENTRPRISES%20LIMITED!5e0!3m2!1sen!2ske!4v1773096452538!5m2!1sen!2ske"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="space-y-6 reveal">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 p-6 rounded-3xl border border-blue-100">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/20">
+                                <i data-lucide="navigation" class="h-6 w-6 text-white"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1 font-display text-lg">Address</h4>
+                                <p class="text-gray-600 leading-relaxed">Skuta,
+                                    Nyeri<br>Kenya<br><span class="text-blue-600 font-semibold">Next to Modern Furniture</span><br><span class="text-blue-600 font-semibold">Opposite Rubis Petrol Station</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2 font-display text-lg">
+                            <i data-lucide="landmark" class="h-5 w-5 text-blue-600"></i>Nearby Landmarks</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-gray-600">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="arrow-right" class="h-4 w-4 text-blue-600"></i></div>
+                                <span>Modern Furniture (Next to us)</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-600">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="arrow-right" class="h-4 w-4 text-red-500"></i></div>
+                                <span>Rubis Petrol Station (Opposite)</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-600">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="arrow-right" class="h-4 w-4 text-blue-600"></i></div>
+                                <span>Skuta Shopping Center</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-green-50 to-green-100/50 p-6 rounded-3xl border border-green-100">
+                        <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2 font-display text-lg">
+                            <i data-lucide="clock" class="h-5 w-5 text-green-600"></i>Working Hours</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between items-center text-gray-600 py-2 border-b border-green-100">
+                                <span class="font-medium">Monday - Friday</span><span class="font-bold text-gray-900">8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center text-gray-600 py-2 border-b border-green-100">
+                                <span class="font-medium">Saturday</span><span class="font-bold text-gray-900">8:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center text-gray-600 py-2">
+                                <span class="font-medium">Sunday</span><span class="font-bold text-red-500">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact"
+        class="py-24 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
+        <div class="blob w-96 h-96 bg-blue-600 top-0 right-0 opacity-10"></div>
+        <div class="blob w-80 h-80 bg-yellow-400 bottom-0 left-0 opacity-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div
+                    class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-blue-300 rounded-full px-4 py-1.5 mb-4 text-sm font-semibold uppercase tracking-wide border border-white/10">
+                    <i data-lucide="mail" class="h-4 w-4"></i>Get In Touch</div>
+                <h2 class="text-4xl md:text-5xl font-black mb-6 font-display">Contact Us Today</h2>
+                <p class="text-blue-200/80 max-w-2xl mx-auto text-lg leading-relaxed">Ready to book a service or have
+                    questions? Reach out to us directly.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="space-y-8 reveal">
+                    <div class="flex items-start gap-5 group">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="phone-call" class="h-8 w-8 text-blue-200"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1 font-display">Phone</h4>
+                            <p class="text-blue-200/70 mb-2">Call us for immediate assistance</p><a
+                                href="tel:0727006325"
+                                class="text-2xl font-black text-white hover:text-blue-300 transition font-display">0727
+                                006 325</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5 group">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-500/20 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="mail" class="h-8 w-8 text-green-200"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1 font-display">Email</h4>
+                            <p class="text-blue-200/70 mb-2">Send us your inquiries</p><a
+                                href="mailto:starrauto@gmail.com"
+                                class="text-xl font-bold text-white hover:text-blue-300 transition font-display">starrauto@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5 group">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/20 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="map-pin" class="h-8 w-8 text-purple-200"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1 font-display">Visit Us</h4>
+                            <p class="text-blue-200/70 mb-2">Skuta Nyeri, Kenya</p>
+                            <p class="text-white font-medium">Next to Modern Furniture<br>Opposite Rubis Petrol Station
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-white/10">
+                        <h4 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-4">Follow Us</h4>
+                        <div class="flex gap-4">
+                            <a href="https://facebook.com/Eric Macharia" target="_blank" rel="noopener noreferrer"
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all duration-300 hover:scale-110"><svg
+                                    width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-white">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg></a>
+                            <a href="https://tiktok.com/@starrautoltd" target="_blank" rel="noopener noreferrer"
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-gray-800 transition-all duration-300 hover:scale-110"><svg
+                                    width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-white">
+                                    <path
+                                        d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                                </svg></a>
+                            <a href="https://wa.me/254727006325" target="_blank" rel="noopener noreferrer"
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-green-600 transition-all duration-300 hover:scale-110"><svg
+                                    width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-white">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 text-gray-800 shadow-2xl reveal">
+                    <h4 class="text-2xl font-black mb-2 text-gray-900 font-display">Send us a Message</h4>
+                    <p class="text-gray-500 mb-6">Fill in the form below and we will get back to you shortly.</p>
+                    <form onsubmit="event.preventDefault(); showSuccessMessage();" class="space-y-5">
+                        <div><label class="block text-sm font-bold text-gray-700 mb-2">Your Name</label><input type="text" required class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition bg-gray-50 focus:bg-white" placeholder="John Doe">
+                        </div>
+                        <div><label class="block text-sm font-bold text-gray-700 mb-2">Phone Number</label><input type="tel" required class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition bg-gray-50 focus:bg-white" placeholder="07XX XXX XXX">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Service Required</label><select class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition bg-gray-50 focus:bg-white"><option>Carwash Services</option><option>Dashcam Solutions</option><option>Fuel Monitoring</option><option>NTSA Services</option><option>Speed Governors</option><option>Car Trackers</option><option>General Inquiry</option></select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Message</label><textarea rows="4" class="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition bg-gray-50 focus:bg-white resize-none" placeholder="Tell us about your vehicle or requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-4 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 btn-shine text-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-16 border-t border-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                            <i data-lucide="car" class="h-7 w-7 text-white"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-black text-white font-display">STARR AUTO</h3>
+                            <p class="text-xs text-blue-500 font-bold uppercase tracking-[0.2em]">Enterprise LTD</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 mb-6 max-w-sm leading-relaxed">Your trusted automotive service provider in
+                        Skuta Nyeri. Quality services, professional team, and customer satisfaction guaranteed.</p>
+                      
+                    <div class="flex gap-3">
+
+                        
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-display text-lg">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>Home</a>
+                        </li>
+                        <li><a href="#services"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>Services</a>
+                        </li>
+                        <li><a href="#about"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>About
+                                Us</a></li>
+                        <li><a href="#contact"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 font-display text-lg">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>Carwash</a>
+                        </li>
+                        <li><a href="#services"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>NTSA
+                                Services</a></li>
+                        <li><a href="#services"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>Speed
+                                Governors</a></li>
+                        <li><a href="#services"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>Car
+                                Trackers</a></li>
+                        <li><a href="#services"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>Dashcam
+                                Solutions</a></li>
+                        <li><a href="#services"
+                                class="hover:text-blue-400 transition flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-blue-600"></i>Fuel
+                                Monitoring</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-600">&copy; 2026 STARR AUTO ENTERPRISE LTD. All rights reserved.</p>
+                <p class="text-sm text-gray-600 flex items-center gap-2">
+                    <i data-lucide="map-pin" class="h-4 w-4 text-blue-600"></i>Skuta Nyeri, Kenya | 0727 006 325</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button (Mobile) -->
+    <a href="tel:0727006325"
+        class="fixed bottom-6 right-6 md:hidden bg-gradient-to-r from-green-500 to-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:shadow-green-500/40 transition-all duration-300 z-50 float-call hover:scale-110">
+        <i data-lucide="phone" class="h-7 w-7"></i>
+    </a>
+
+    <!-- Success Toast -->
+    <div id="success-toast"
+        class="fixed top-24 right-6 bg-green-500 text-white px-6 py-4 rounded-2xl shadow-2xl transform translate-x-full transition-transform duration-500 z-50 flex items-center gap-3">
+        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+            <i data-lucide="check" class="h-5 w-5"></i></div>
+        <div>
+            <p class="font-bold">Message Sent!</p>
+            <p class="text-sm text-green-100">We will contact you soon.</p>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('mobile-overlay');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open'); overlay.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                menu.classList.add('open'); overlay.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        }
+        function showSuccessMessage() {
+            const toast = document.getElementById('success-toast');
+            toast.classList.remove('translate-x-full');
+            setTimeout(() => { toast.classList.add('translate-x-full'); }, 4000);
+        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg'); nav.classList.remove('bg-white/95'); nav.classList.add('bg-white');
+            } else {
+                nav.classList.remove('shadow-lg'); nav.classList.add('bg-white/95'); nav.classList.remove('bg-white');
+            }
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { root: null, rootMargin: '0px', threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
